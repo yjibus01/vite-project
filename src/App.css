@@ -1,5 +1,5 @@
 @charset "UTF-8";
-/* Kiosk Order System */
+/* Kiosk Order System - Responsive 1200px */
 
 /* 프리텐다드 (한글) */
 @import url('https://cdnjs.cloudflare.com/ajax/libs/pretendard/1.3.9/static/pretendard.css');
@@ -20,52 +20,24 @@
 }
 
 body {
-  margin: 20px;
+  margin: 20px auto; /* 중앙 정렬 */
+  max-width: 1200px; /* 전체 컨테이너를 1200px로 제한 */
+  width: 100%; /* 반응형을 위해 추가 */
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 24px;
+  padding: 0 20px; /* 좌우 여백 */
 }
 
-/* nesting처리 */
-/* .menu {
-  display: flex;
-  justify-content: center;
-  width: 70%;
-  min-width: 960px;
-  margin-bottom: 20px;
-  gap: 24px;
-
-  & > article {
-    flex: 1;
-    margin: 0 10px;
-    padding: 10px 20px;
-    cursor: pointer;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    word-break: keep-all;
-
-    & img {
-      width: 100%;
-      opacity: 1;
-    }
-    &:hover img {
-      opacity: 0.9;
-      transition: all 0.3s;
-    }
-  }
-} */
-
-/* 표준형태 */
+/* 메뉴 섹션 - 반응형 */
 .menu {
-  /* display: flex;
-  flex-flow: row wrap; */
+  display: flex; /* flex 활성화 */
+  flex-flow: row wrap;
   justify-content: center;
-  width: 70%;
-  min-width: 960px;
+  width: 100%; /* body가 1200px이므로 100% 사용 */
+  max-width: 1200px; /* 명시적으로 1200px 제한 */
+  min-width: unset; /* 모바일을 위해 min-width 제거 */
   margin-bottom: 20px;
   gap: 24px;
 }
@@ -75,8 +47,10 @@ body {
 }
 .menu > article {
   flex: 1;
+  min-width: 300px; /* 최소 너비를 더 크게 */
+  max-width: 350px; /* 최대 너비도 설정 */
   margin: 0 10px;
-  padding: 10px 20px;
+  padding: 15px 25px; /* 패딩도 더 크게 */
   cursor: pointer;
   border: 1px solid #ccc;
   border-radius: 5px;
@@ -91,12 +65,12 @@ body {
 }
 .menu > article:hover img {
   opacity: 0.9;
-  transition: all
+  transition: all 0.3s; /* transition 시간 추가 */
 }
 
 .cart {
-  width: 80%;
-  max-width: 680px;
+  width: 100%; /* 전체 너비 사용 */
+  max-width: 1000px; /* 더 넓게 조정 */
   border: 1px solid #ccc;
   border-radius: 10px;
   padding: 20px;
@@ -135,18 +109,28 @@ body {
 }
 
 .navbar {
-  width: 100%; /* 화면 가로 전체 사용 */
-  max-width: none; /* 혹시 제한 있었으면 제거 */
+  width: 100vw; /* 전체 화면 너비 사용 */
+  max-width: none;
   display: flex;
-  justify-content: space-between;
+  justify-content: center; /* 중앙 정렬을 위해 */
   align-items: center;
-  padding: 12px 48px;
-  margin-bottom: 40px;
+  padding: 12px 0;
+  margin: -20px -20px 40px -20px; /* body margin을 상쇄 */
   background-color: #fff;
   border-bottom: 1px solid #eee;
   position: sticky;
   top: 0;
   z-index: 1000;
+}
+
+/* 네비바 내용물 컨테이너 */
+.nav-container {
+  width: 100%;
+  max-width: 1200px; /* 네비바 내용물도 1200px 제한 */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px; /* 모바일을 위해 패딩 줄임 */
 }
 
 /* 로고 */
@@ -165,13 +149,13 @@ body {
 .nav-right {
   display: flex;
   align-items: center;
-  gap: 40px; /* 메뉴와 아이콘 사이 간격 */
+  gap: 20px; /* 모바일을 위해 간격 줄임 */
 }
 
 /* 메뉴 */
 .nav-menu ul {
   display: flex;
-  gap: 32px; /* 메뉴 간 간격 */
+  gap: 16px; /* 모바일을 위해 간격 줄임 */
   list-style: none;
   margin: 0;
   padding: 0;
@@ -180,6 +164,7 @@ body {
   text-decoration: none;
   color: #333;
   font-weight: 500;
+  font-size: 0.95rem; /* 약간 작게 */
 }
 .nav-menu a:hover {
   color: #c49b63;
@@ -189,9 +174,122 @@ body {
 .nav-icons {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 12px; /* 간격 줄임 */
 }
 .nav-icons img {
-  height: 20px;
-  width: 20px;
+  height: 18px;
+  width: 18px;
+}
+
+/* =================
+   반응형 미디어 쿼리
+   ================= */
+
+/* 태블릿 (768px 이하) */
+@media (max-width: 768px) {
+  body {
+    padding: 0 16px;
+    margin: 16px auto;
+    gap: 16px;
+  }
+  
+  .nav-container {
+    padding: 0 16px;
+  }
+  
+  .nav-right {
+    gap: 16px;
+  }
+  
+  .nav-menu ul {
+    gap: 12px;
+  }
+  
+  .nav-menu a {
+    font-size: 0.9rem;
+  }
+  
+  .menu {
+    gap: 16px;
+  }
+  
+  .menu > article {
+    margin: 0 5px;
+    padding: 8px 16px;
+    min-width: 200px;
+  }
+  
+  .cart {
+    padding: 16px;
+  }
+}
+
+/* 모바일 (480px 이하) */
+@media (max-width: 480px) {
+  body {
+    padding: 0 12px;
+    margin: 12px auto;
+  }
+  
+  .nav-logo a {
+    font-size: 1.3rem;
+  }
+  
+  .nav-container {
+    padding: 0 12px;
+  }
+  
+  .nav-right {
+    gap: 12px;
+  }
+  
+  .nav-menu ul {
+    gap: 8px;
+  }
+  
+  .nav-menu a {
+    font-size: 0.85rem;
+  }
+  
+  .nav-icons img {
+    height: 16px;
+    width: 16px;
+  }
+  
+  /* 메뉴를 세로로 배치 */
+  .menu {
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .menu > article {
+    margin: 0;
+    min-width: unset;
+    width: 100%;
+  }
+  
+  .cart {
+    padding: 12px;
+  }
+  
+  .cartItem {
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  
+  .cartItem span:last-of-type {
+    flex: 0 0 80px;
+  }
+}
+
+/* 대형 화면 (1400px 이상) */
+@media (min-width: 1400px) {
+  body {
+    max-width: 1400px; /* 더 큰 화면에서는 더 넓게 */
+  }
+  
+  .nav-container {
+    max-width: 1400px;
+    padding: 0 48px;
+  }
 }

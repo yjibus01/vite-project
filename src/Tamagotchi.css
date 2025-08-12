@@ -1,0 +1,255 @@
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Gaegu&display=swap');
+
+/* 전체 컨테이너 */
+.tamagotchi-container {
+  font-family: 'Pretendard', sans-serif;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* 헤더 */
+.header {
+  background: linear-gradient(135deg, #6B73FF 0%, #9AC6FF 100%);
+  padding: 20px;
+  border-radius: 15px;
+  text-align: center;
+  margin-bottom: 30px;
+  color: white;
+}
+
+.header h1 {
+  font-family: 'Gaegu', cursive;
+  font-weight: 500;
+  font-size: 4rem;
+  margin: 0;
+}
+
+.money {
+  margin: 10px 0 0 0;
+  opacity: 0.9;
+}
+
+/* 메인 그리드 */
+.main-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  margin-bottom: 30px;
+}
+
+/* 카드 공통 스타일 */
+.pet-status-card,
+.message-card,
+.shop-card {
+  background: white;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* 펫 상태 카드 */
+.pet-status-card {
+  text-align: center;
+}
+
+.pet-emoji {
+  line-height: 1;
+  margin: 20px 0;
+  transition: all 0.3s ease;
+}
+
+.pet-name {
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* 상태 바 */
+.status-item {
+  margin-bottom: 15px;
+}
+
+.status-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.status-value {
+  font-weight: bold;
+}
+
+.status-value.status-good,
+.status-fill.status-good {
+  color: #4CAF50;
+  background-color: #4CAF50;
+}
+
+.status-value.status-medium,
+.status-fill.status-medium {
+  color: #FF9800;
+  background-color: #FF9800;
+}
+
+.status-value.status-bad,
+.status-fill.status-bad {
+  color: #F44336;
+  background-color: #F44336;
+}
+
+.status-bar {
+  background: #f0f0f0;
+  border-radius: 10px;
+  height: 20px;
+  overflow: hidden;
+}
+
+.status-fill {
+  height: 100%;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+.pet-info {
+  margin-top: 20px;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+/* 메시지 카드 */
+.message-title {
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.message-container {
+  background: #f8f9fa;
+  padding: 20px;
+  border-radius: 10px;
+  height: 200px;
+  overflow-y: auto;
+  border: 2px solid #e9ecef;
+}
+
+.message-bubble {
+  margin-bottom: 10px;
+  padding: 8px 12px;
+  background: #fff;
+  border-radius: 15px;
+  font-size: 0.9rem;
+  border: 1px solid #dee2e6;
+}
+
+/* 상점 카드 */
+.shop-card {
+  padding: 30px;
+}
+
+.shop-title {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+.shop-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+/* 상점 아이템 */
+.shop-item {
+  border: 2px solid #e9ecef;
+  border-radius: 15px;
+  padding: 20px;
+  text-align: center;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  background: white;
+}
+
+.shop-item:hover {
+  transform: translateY(-5px);
+}
+
+.shop-item.disabled {
+  background: #f8f9fa;
+  cursor: not-allowed;
+}
+
+.shop-item.disabled:hover {
+  transform: none;
+}
+
+.item-emoji {
+  font-size: 3rem;
+  margin-bottom: 15px;
+}
+
+.item-name {
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.item-description {
+  color: #666;
+  font-size: 0.9rem;
+  margin-bottom: 15px;
+}
+
+.item-effects {
+  margin-bottom: 15px;
+  font-size: 0.85rem;
+}
+
+.effect-hunger {
+  color: #28a745;
+}
+
+.effect-happiness {
+  color: #ffc107;
+  margin: 0 10px;
+}
+
+.effect-energy {
+  color: #17a2b8;
+}
+
+.item-count {
+  font-size: 0.8rem;
+  color: #666;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+  .main-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .header h1 {
+    font-size: 2rem;
+  }
+  
+  .shop-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .tamagotchi-container {
+    padding: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header h1 {
+    font-size: 1.5rem;
+  }
+  
+  .pet-status-card,
+  .message-card,
+  .shop-card {
+    padding: 20px;
+  }
+}
