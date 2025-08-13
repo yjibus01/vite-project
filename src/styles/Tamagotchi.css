@@ -1,13 +1,18 @@
 /* Google Fonts (헤더 폰트 포함) */
 @import url('https://fonts.googleapis.com/css2?family=Gaegu&display=swap');
 
+/* 페이지 전체 배경색 */
+body {
+  margin: 0;
+  background: linear-gradient(135deg, #fff6d8 0%, #fef8e6 50%, #fdebc8 100%);
+}
+
 /* 전체 컨테이너 */
 .tamagotchi-container {
   font-family: 'Pretendard', sans-serif;
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
-  background-color: #c59914;
 }
 
 /* 메인 그리드 */
