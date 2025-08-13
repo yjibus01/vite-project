@@ -1,7 +1,17 @@
 /* Google Fonts (헤더 폰트 포함) */
 @import url('https://fonts.googleapis.com/css2?family=Gaegu&display=swap');
 
-/* 페이지 전체 배경색 */
+/* 화면 전체 높이 확보 */
+html, body, #root {
+  min-height: 100%;
+}
+
+/* 루트가 흰색이면 body 배경을 가려서 투명으로 */
+#root {
+  background: transparent;
+}
+
+/* 페이지 전체 배경 */
 body {
   margin: 0;
   background: linear-gradient(135deg, #fff6d8 0%, #fef8e6 50%, #fdebc8 100%);
