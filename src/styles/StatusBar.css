@@ -1,0 +1,41 @@
+/* 상태 바 묶음 */
+.status-item { margin-bottom: 15px; }
+
+.status-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.status-value { font-weight: bold; }
+
+/* good/medium/bad 공통 색상 */
+.status-value.status-good,
+.status-fill.status-good {
+  color: #4CAF50;
+  background-color: #4CAF50;
+}
+.status-value.status-medium,
+.status-fill.status-medium {
+  color: #FF9800;
+  background-color: #FF9800;
+}
+.status-value.status-bad,
+.status-fill.status-bad {
+  color: #F44336;
+  background-color: #F44336;
+}
+
+.status-bar {
+  background: #f0f0f0;
+  border-radius: 10px;
+  height: 20px;
+  overflow: hidden;
+}
+
+.status-fill {
+  height: 100%;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}

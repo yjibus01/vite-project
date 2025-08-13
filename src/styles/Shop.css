@@ -1,0 +1,27 @@
+/* 카드 공통 스타일(상점 카드에 적용) */
+.shop-card {
+  background: white;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.shop-title {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+.shop-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+/* 반응형: 카드/그리드 */
+@media (max-width: 768px) {
+  .shop-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 480px) {
+  .shop-card { padding: 20px; }
+}

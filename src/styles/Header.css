@@ -1,0 +1,29 @@
+/* 헤더 */
+.header {
+  background: linear-gradient(135deg, #6B73FF 0%, #9AC6FF 100%);
+  padding: 20px;
+  border-radius: 15px;
+  text-align: center;
+  margin-bottom: 30px;
+  color: white;
+}
+
+.header h1 {
+  font-family: 'Gaegu', cursive;
+  font-weight: 500;
+  font-size: 4rem;
+  margin: 0;
+}
+
+.money {
+  margin: 10px 0 0 0;
+  opacity: 0.9;
+}
+
+/* 반응형: 헤더 제목 크기 */
+@media (max-width: 768px) {
+  .header h1 { font-size: 2rem; }
+}
+@media (max-width: 480px) {
+  .header h1 { font-size: 1.5rem; }
+}

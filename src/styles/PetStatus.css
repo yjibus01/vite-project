@@ -1,0 +1,30 @@
+/* 카드 공통 스타일(펫 상태 카드에 적용) */
+.pet-status-card {
+  background: white;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.pet-emoji {
+  line-height: 1;
+  margin: 20px 0;
+  transition: all 0.3s ease;
+}
+
+.pet-name {
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.pet-info {
+  margin-top: 20px;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+/* 반응형: 카드 패딩 */
+@media (max-width: 480px) {
+  .pet-status-card { padding: 20px; }
+}

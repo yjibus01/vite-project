@@ -1,0 +1,30 @@
+/* Google Fonts (헤더 폰트 포함) */
+@import url('https://fonts.googleapis.com/css2?family=Gaegu&display=swap');
+
+/* 전체 컨테이너 */
+.tamagotchi-container {
+  font-family: 'Pretendard', sans-serif;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fef8e6;
+}
+
+/* 메인 그리드 */
+.main-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  margin-bottom: 30px;
+}
+
+/* 반응형: 컨테이너/그리드 */
+@media (max-width: 768px) {
+  .main-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .tamagotchi-container {
+    padding: 15px;
+  }
+}

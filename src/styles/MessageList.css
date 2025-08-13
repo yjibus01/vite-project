@@ -1,0 +1,35 @@
+/* 카드 공통 스타일(메시지 카드에 적용) */
+.message-card {
+  background: white;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.message-title {
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.message-container {
+  background: #f8f9fa;
+  padding: 20px;
+  border-radius: 10px;
+  height: 200px;
+  overflow-y: auto;
+  border: 2px solid #e9ecef;
+}
+
+.message-bubble {
+  margin-bottom: 10px;
+  padding: 8px 12px;
+  background: #fff;
+  border-radius: 15px;
+  font-size: 0.9rem;
+  border: 1px solid #dee2e6;
+}
+
+/* 반응형: 카드 패딩 */
+@media (max-width: 480px) {
+  .message-card { padding: 20px; }
+}
