@@ -1,0 +1,62 @@
+/* 상점 아이템 */
+.shop-item {
+  border: 2px solid #e9ecef;
+  border-radius: 15px;
+  padding: 20px;
+  text-align: center;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  background: white;
+}
+
+.shop-item:hover {
+  transform: translateY(-5px);
+}
+
+.shop-item.disabled {
+  background: #f8f9fa;
+  cursor: not-allowed;
+}
+
+.shop-item.disabled:hover {
+  transform: none;
+}
+
+.item-emoji {
+  font-size: 3rem;
+  margin-bottom: 15px;
+}
+
+.item-name {
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.item-description {
+  color: #666;
+  font-size: 0.9rem;
+  margin-bottom: 15px;
+}
+
+.item-effects {
+  margin-bottom: 15px;
+  font-size: 0.85rem;
+}
+
+.effect-hunger {
+  color: #28a745;
+}
+
+.effect-happiness {
+  color: #ffc107;
+  margin: 0 10px;
+}
+
+.effect-energy {
+  color: #17a2b8;
+}
+
+.item-count {
+  font-size: 0.8rem;
+  color: #666;
+}
