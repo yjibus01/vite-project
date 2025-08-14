@@ -1,13 +1,26 @@
+// StatusBar.jsx
 import '../../styles/StatusBar.css';
 
-export default function MessageList({ name, messages }) {
+export default function StatusBar({ label, value, icon }) {
+  const getStatusColor = (v) => {
+    if (v >= 70) return 'status-good';
+    if (v >= 40) return 'status-medium';
+    return 'status-bad';
+  };
+
   return (
-    <div className="message-card">
-      <h3 className="message-title">💬 {name}의 말</h3>
-      <div className="message-container">
-        {messages.map((m, i) => (
-          <div key={i} className="message-bubble">{m}</div>
-        ))}
+    <div className="status-item">
+      <div className="status-header">
+        <span>{icon} {label}</span>
+        <span className={`status-value ${getStatusColor(value)}`}>
+          {value}%
+        </span>
+      </div>
+      <div className="status-bar">
+        <div
+          className={`status-fill ${getStatusColor(value)}`}
+          style={{ width: `${value}%` }}
+        />
       </div>
     </div>
   );

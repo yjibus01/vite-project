@@ -1,11 +1,23 @@
+// main.jsx
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import App from './Tamagotchi.jsx'
-import './styles/Tamagotchi.css'; // 전체 스타일
-import './styles/Header.css'; // 헤더 스타일
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+
+import Intro from './Intro.jsx'
+import Tamagotchi from './Tamagotchi.jsx'
+import ShopPage from './ShopPage';
+
+import './styles/Tamagotchi.css'
+import './styles/Header.css'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <App />
+    <BrowserRouter basename="/vite-project">
+      <Routes>
+        <Route path="/" element={<Intro />} />
+        <Route path="/game" element={<Tamagotchi />} />
+        <Route path="/shop" element={<ShopPage />} />
+      </Routes>
+    </BrowserRouter>
   </StrictMode>
 )
