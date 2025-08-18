@@ -9,6 +9,7 @@ import ShopPage from './ShopPage';
 
 import './styles/Tamagotchi.css'
 import './styles/Header.css'
+import './styles/Intro.css'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
